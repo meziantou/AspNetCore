@@ -19,7 +19,7 @@ namespace Microsoft.JSInterop
         /// <param name="identifier">An identifier for the function to invoke. For example, the value <c>"someScope.someFunction"</c> will invoke the function <c>window.someScope.someFunction</c>.</param>
         /// <param name="args">JSON-serializable arguments.</param>
         /// <returns>A <see cref="ValueTask"/> that represents the asynchronous invocation operation.</returns>
-        public static async ValueTask InvokeVoidAsync(this IJSRuntime jsRuntime, string identifier, params object[] args)
+        public static async ValueTask InvokeVoidAsync(this IJSRuntime jsRuntime, string identifier, params object?[]? args)
         {
             if (jsRuntime is null)
             {
@@ -84,7 +84,7 @@ namespace Microsoft.JSInterop
         /// </param>
         /// <param name="args">JSON-serializable arguments.</param>
         /// <returns>A <see cref="ValueTask"/> that represents the asynchronous invocation operation.</returns>
-        public static async ValueTask InvokeVoidAsync(this IJSRuntime jsRuntime, string identifier, CancellationToken cancellationToken, params object[] args)
+        public static async ValueTask InvokeVoidAsync(this IJSRuntime jsRuntime, string identifier, CancellationToken cancellationToken, params object?[]? args)
         {
             if (jsRuntime is null)
             {
@@ -124,7 +124,7 @@ namespace Microsoft.JSInterop
         /// <param name="timeout">The duration after which to cancel the async operation. Overrides default timeouts (<see cref="JSRuntime.DefaultAsyncTimeout"/>).</param>
         /// <param name="args">JSON-serializable arguments.</param>
         /// <returns>A <see cref="ValueTask"/> that represents the asynchronous invocation operation.</returns>
-        public static async ValueTask InvokeVoidAsync(this IJSRuntime jsRuntime, string identifier, TimeSpan timeout, params object[] args)
+        public static async ValueTask InvokeVoidAsync(this IJSRuntime jsRuntime, string identifier, TimeSpan timeout, params object?[]? args)
         {
             if (jsRuntime is null)
             {
